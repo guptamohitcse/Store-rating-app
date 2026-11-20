@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up - Store Rating</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-box">
+    <h1>Create account</h1>
+    <p class="sub">Sign up to rate your favourite stores</p>
+
+    <div class="card">
+      <div id="msg" class="msg"></div>
+      <form id="signupForm">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" required>
+          <div class="hint">20 to 60 characters</div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="field">
+          <label for="address">Address</label>
+          <textarea id="address" required></textarea>
+          <div class="hint">Maximum 400 characters</div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+          <div class="hint">8-16 characters, one uppercase letter and one special character</div>
+        </div>
+        <button type="submit">Sign up</button>
+      </form>
+      <p class="switch">Already have an account? <a href="index.html">Log in</a></p>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

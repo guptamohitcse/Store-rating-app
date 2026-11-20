@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Store - Store Rating</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1>Store Rating - Owner</h1>
+    <div class="right"><span id="welcome"></span><button id="logoutBtn">Log out</button></div>
+  </div>
+
+  <div class="container">
+    <div id="msg" class="msg"></div>
+
+    <div id="noStore" class="card" style="display:none">
+      <h2>No store assigned</h2>
+      <p>An administrator has not linked a store to your account yet.</p>
+    </div>
+
+    <div id="storeArea" style="display:none">
+      <div class="stats">
+        <div class="stat"><div class="label">Your store</div><div class="value" id="storeName" style="font-size:20px">-</div></div>
+        <div class="stat"><div class="label">Average rating</div><div class="value" id="average">-</div></div>
+        <div class="stat"><div class="label">Total ratings</div><div class="value" id="total">-</div></div>
+      </div>
+
+      <div class="card">
+        <h2>People who rated your store</h2>
+        <div class="table-wrap">
+          <table id="ratersTable">
+            <thead><tr>
+              <th data-sort="name">Name</th>
+              <th data-sort="email">Email</th>
+              <th>Address</th>
+              <th data-sort="rating">Rating</th>
+              <th data-sort="date">Date</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary>Change my password</summary>
+        <form id="passwordForm">
+          <div id="passwordMsg" class="msg"></div>
+          <div class="field">
+            <label>Current password</label>
+            <input type="password" name="currentPassword" required>
+          </div>
+          <div class="field">
+            <label>New password</label>
+            <input type="password" name="newPassword" required>
+            <div class="hint">8-16 characters, one uppercase letter and one special character</div>
+          </div>
+          <button type="submit">Update password</button>
+        </form>
+      </details>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/owner.js"></script>
+</body>
+</html>

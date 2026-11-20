@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stores - Store Rating</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1>Store Rating</h1>
+    <div class="right"><span id="welcome"></span><button id="logoutBtn">Log out</button></div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Find a store</h2>
+      <div id="msg" class="msg"></div>
+      <div class="filters" id="searchBox">
+        <input type="text" name="name" placeholder="Search by store name">
+        <input type="text" name="address" placeholder="Search by address">
+      </div>
+      <div class="table-wrap">
+        <table id="storesTable">
+          <thead><tr>
+            <th data-sort="name">Store name</th>
+            <th data-sort="address">Address</th>
+            <th data-sort="rating">Overall rating</th>
+            <th>Your rating (click a star)</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary>Change my password</summary>
+        <form id="passwordForm">
+          <div id="passwordMsg" class="msg"></div>
+          <div class="field">
+            <label>Current password</label>
+            <input type="password" name="currentPassword" required>
+          </div>
+          <div class="field">
+            <label>New password</label>
+            <input type="password" name="newPassword" required>
+            <div class="hint">8-16 characters, one uppercase letter and one special character</div>
+          </div>
+          <button type="submit">Update password</button>
+        </form>
+      </details>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/user.js"></script>
+</body>
+</html>

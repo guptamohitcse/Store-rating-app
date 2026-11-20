@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - Store Rating</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1>Store Rating - Admin</h1>
+    <div class="right"><span id="welcome"></span><button id="logoutBtn">Log out</button></div>
+  </div>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="label">Total users</div><div class="value" id="statUsers">-</div></div>
+      <div class="stat"><div class="label">Total stores</div><div class="value" id="statStores">-</div></div>
+      <div class="stat"><div class="label">Total ratings</div><div class="value" id="statRatings">-</div></div>
+    </div>
+
+    <div class="tabs">
+      <button class="active" data-tab="usersTab">Users</button>
+      <button data-tab="storesTab">Stores</button>
+      <button data-tab="addUserTab">Add user</button>
+      <button data-tab="addStoreTab">Add store</button>
+    </div>
+
+    <!-- USERS LIST -->
+    <div id="usersTab" class="tab-panel active card">
+      <h2>All users</h2>
+      <div class="filters" id="userFilters">
+        <input type="text" name="name" placeholder="Filter by name">
+        <input type="text" name="email" placeholder="Filter by email">
+        <input type="text" name="address" placeholder="Filter by address">
+        <select name="role">
+          <option value="">All roles</option>
+          <option value="admin">Admin</option>
+          <option value="user">Normal user</option>
+          <option value="owner">Store owner</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table id="usersTable">
+          <thead><tr>
+            <th data-sort="name">Name</th>
+            <th data-sort="email">Email</th>
+            <th data-sort="address">Address</th>
+            <th data-sort="role">Role</th>
+            <th></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STORES LIST -->
+    <div id="storesTab" class="tab-panel card">
+      <h2>All stores</h2>
+      <div class="filters" id="storeFilters">
+        <input type="text" name="name" placeholder="Filter by name">
+        <input type="text" name="email" placeholder="Filter by email">
+        <input type="text" name="address" placeholder="Filter by address">
+      </div>
+      <div class="table-wrap">
+        <table id="storesTable">
+          <thead><tr>
+            <th data-sort="name">Name</th>
+            <th data-sort="email">Email</th>
+            <th data-sort="address">Address</th>
+            <th data-sort="rating">Rating</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ADD USER -->
+    <div id="addUserTab" class="tab-panel card">
+      <h2>Add a new user</h2>
+      <div id="userMsg" class="msg"></div>
+      <form id="addUserForm">
+        <div class="form-grid">
+          <div class="field"><label>Name</label><input type="text" name="name" required><div class="hint">20 to 60 characters</div></div>
+          <div class="field"><label>Email</label><input type="email" name="email" required></div>
+          <div class="field"><label>Password</label><input type="password" name="password" required><div class="hint">8-16 chars, one uppercase, one special character</div></div>
+          <div class="field">
+            <label>Role</label>
+            <select name="role">
+              <option value="user">Normal user</option>
+              <option value="owner">Store owner</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Address</label><textarea name="address" required></textarea></div>
+        <button type="submit">Add user</button>
+      </form>
+    </div>
+
+    <!-- ADD STORE -->
+    <div id="addStoreTab" class="tab-panel card">
+      <h2>Add a new store</h2>
+      <div id="storeMsg" class="msg"></div>
+      <form id="addStoreForm">
+        <div class="form-grid">
+          <div class="field"><label>Store name</label><input type="text" name="name" required><div class="hint">20 to 60 characters</div></div>
+          <div class="field"><label>Store email</label><input type="email" name="email" required></div>
+          <div class="field">
+            <label>Store owner (optional)</label>
+            <select name="ownerId"><option value="">No owner yet</option></select>
+            <div class="hint">Only owners without a store are listed</div>
+          </div>
+        </div>
+        <div class="field"><label>Address</label><textarea name="address" required></textarea></div>
+        <button type="submit">Add store</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <details>
+        <summary>Change my password</summary>
+        <form id="passwordForm">
+          <div id="passwordMsg" class="msg"></div>
+          <div class="field">
+            <label>Current password</label>
+            <input type="password" name="currentPassword" required>
+          </div>
+          <div class="field">
+            <label>New password</label>
+            <input type="password" name="newPassword" required>
+            <div class="hint">8-16 characters, one uppercase letter and one special character</div>
+          </div>
+          <button type="submit">Update password</button>
+        </form>
+      </details>
+    </div>
+  </div>
+
+  <dialog id="detailsDialog">
+    <h2 style="margin-top:0">User details</h2>
+    <dl id="detailsList"></dl>
+    <button class="secondary" id="closeDetails">Close</button>
+  </dialog>
+
+  <script src="js/common.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

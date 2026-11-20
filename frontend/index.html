@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Store Rating</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-box">
+    <h1>Store Rating</h1>
+    <p class="sub">Log in to continue</p>
+
+    <div class="card">
+      <div id="msg" class="msg"></div>
+      <form id="loginForm">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit">Log in</button>
+      </form>
+      <p class="switch">New here? <a href="signup.html">Create an account</a></p>
+
+      <div class="demo">
+        <b>Demo logins</b> (after running setup)<br>
+        Admin: admin@storerating.com / Admin@123<br>
+        Owner: owner@storerating.com / Owner@123<br>
+        User: user@storerating.com / User@1234
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
