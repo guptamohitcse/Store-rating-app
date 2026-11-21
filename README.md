@@ -1,5 +1,7 @@
 # Store Rating Platform
 
+Demo Link - https://store-rating-apps.netlify.app/
+
 A full-stack web app where users can rate stores from 1 to 5.
 One login page for everyone - what you see after login depends on your role.
 
